@@ -1,0 +1,20 @@
+stirling_2():={
+
+  local i,j;
+  local stirl2_matrix := matrix(m+1,m+1,0); //Pinakas (m+1)x(m+1) stoixeiwn me 0nika
+  stirl2_matrix[0,0] := 1; //8etw to 1o stoixeio tou pinaka 1
+
+  for(i := 1; i <= m; i++){
+
+      for(j := 1; j <=i ; j++){
+
+            stirl2_matrix[i,j] := j * stirl2_matrix[i-1,j] + stirl2_matrix[i-1,j-1]; //dhmiourgia pinaka stirling
+
+      }
+
+   }
+ 
+   return(stirl2_matrix); 
+
+}
+:;
